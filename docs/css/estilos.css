@@ -55,7 +55,7 @@ header, footer{
     overflow: hidden;
     position: relative;
     clip-path: circle(0% at 50% 50%);
-    animation: open .5s ease-in-out forwards;
+    animation: open .3s .3s ease-in-out forwards;
 }
 #form-whats::before{
     position: absolute;
