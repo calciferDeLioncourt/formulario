@@ -30,12 +30,14 @@
         <input id="hora" type="time" min="07:00" max="21:00" step="3600" class="select">
         
         <label for="barbero">Barbero de preferencia</label>
-        <select id="barbero" name="listabarberos">
-            <option disabled selected>Seleccionar...</option>
-            <option>Barbero Cristóbal</option>
-            <option>Barbero Elis</option>
-        </select>
-        
+        <div class="cont-select">
+            <select id="barbero" name="listabarberos">
+                <option disabled selected>Seleccionar...</option>
+                <option>Barbero Cristóbal</option>
+                <option>Barbero Elis</option>
+            </select>
+            <label for="barbero"><i class="fas fa-chevron-down"></i></label>
+        </div>
         <label for="servicio">¿Cuál es el servicio que se desea realizar?</label>
         <div class="cont-select">
             <select id="servicio" name="listaservicios">
