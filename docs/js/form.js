@@ -59,7 +59,7 @@ if(hora.value.replace(/\:/g, '') > '0659' && hora.value.replace(/\:/g, '') < '21
     resp.classList.add('fail');
     resp.innerHTML = "Horario de servicio de 7:00 am  a 21:00 pm";
     hora.classList.remove('select');
-    hora.style.borderBottom="solid 5px red";
+    hora.style.borderBottom="solid 2px red";
 };
 hora.addEventListener('change', ()=>{
     reset();
@@ -70,7 +70,7 @@ hora.addEventListener('change', ()=>{
         hora.classList.remove('select');
         resp.classList.add('fail');
         resp.innerHTML = "Horario de servicio de 7:00 am  a 21:00 pm";
-        hora.style.borderBottom="solid 5px red";
+        hora.style.borderBottom="solid 2px red";
         return false
     };
     selecion(hora);
