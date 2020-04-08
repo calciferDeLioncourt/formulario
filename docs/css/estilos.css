@@ -5,40 +5,124 @@
 }
 :root{
     --color-active: skyblue;
+    --bg: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(239,183,16,1) 100%);
+    --fontColor: #EFB810;
 }
 body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size:16px;
+    color: var(--fontColor);
+    background: red url(../img/in-3315725_1920.jpg);
+    background-position: center center;
+}
+header, footer{
+    width: 100%;
+    min-height: 50px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.62em;
 }
 #form-whats {
-    margin: 50px auto;
+    margin: 3.12em auto;
     display: flex;
     flex-wrap: wrap;
     width: 95%;
     max-width: 500px;
     padding: 1.25em;
-    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px 1px rgba(255,255,255,1);
+    border-radius: 0.93em;
+    overflow: hidden;
     position: relative;
+    clip-path: circle(0% at 50% 50%);
+    animation: open .5s ease-in-out forwards;
+}
+#form-whats::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/in-3315725_1920.jpg);
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px) grayscale(100%);
+    z-index: -1;
+}
+#form-whats::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,.9) 0%, rgba(239,183,16,.2) 100%);
+    filter: blur(1px);
+    z-index: 0;
 }
 label{
     width: 100%;
-    height: 30px;
-    line-height: 30px;
+    min-height: 1.87em;
+    line-height: 1.87em;
+    position: relative;
+    z-index: 2;
 }
 #form-whats h1, #form-whats h3, #form-whats p{
     width: 100%;
     text-align: center;
     margin-bottom: 0.625em;
+    position: relative;
+    z-index: 2;
+}
+#form-whats h1, #form-whats h3{
+    font-family: 'Pacifico', cursive;
+}
+input::placeholder{
+    font-family: cursive;
+    font-style: italic;
 }
 input, select{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.81em;
     width: 80%;
     height: 30px;
     margin: auto;
-    margin-bottom: 7px;
+    text-align: center;
+    margin-bottom: 0.43em;
+    background: none;
     border: none;
     border-bottom: solid 2px gray;
     outline: none;
     transition: all .3s ease-in;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+.cont-select{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.43em;
+}
+select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+select i{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+select option{
+    background: #000;
 }
 input.select, select.select{
     border-bottom: solid 4px var(--color-active);
@@ -58,19 +142,25 @@ input[type="submit"]{
     display: flex;
     align-items: center;
     width: 0;
-    padding: 0px;
-    height: 30px;
-    background: blue;
+    padding: 0em;
+    height: 1.87em;
+    background: #00bb2d;
     color: white;
     overflow: hidden;
-    border: solid 2px white;
+    border: solid 0px rgba(255,255,255,0);
     transition: all .3s ease-in;
 }
-.btn.active{
-    width: auto;
-    padding: 20px;
-    cursor: pointer;
+.txt-btn{
+display: block;
+margin: 0 auto;
 }
+.btn.active{
+    width: 12.5em;
+    padding: 1.25em;
+    cursor: pointer;
+    border: solid 2px rgba(255,255,255,1);
+}
+
 /* respuesta del formulario */
 #respuesta{
     width: 100%;
@@ -82,5 +172,20 @@ input[type="submit"]{
     color: red;
 }
 #respuesta.send{
-    color: green;
+    color: #00bb2d;
+}
+footer{
+    background:#EFB810;
+    align-self: flex-end;
+    color: rgba(255,255,255,1);
+}
+footer p{
+    width: 100%;
+    margin-bottom: 0.31em;
+}
+
+@keyframes open{
+    100%{
+        clip-path: circle(100% at 50% 50%);
+    }
 }

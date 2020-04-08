@@ -6,8 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario Whatsapp</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1f8614daef.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
+       <h1>Demo de formulario para Whatsapp</h1>
+    </header>
     <form id="form-whats">
        
        <h1 class="formulario__titulo">Formulario</h1>
@@ -31,26 +37,35 @@
         </select>
         
         <label for="servicio">¿Cuál es el servicio que se desea realizar?</label>
-        <select id="servicio" name="listaservicios">
-            <option disabled selected>Seleccionar...</option>
-            <option>Corte de Cabello - $12.000</option>
-            <option>Afeitado de la Barba - $12.000</option>
-            <option>Peinado para caballero - $12.000</option>
-            <option>Servicio Facial - $12.000</option>
-            <option>Combo 1 Corte+Barba - $20.000</option>
-            <option>Combo 2 Corte+Barba+Peinado - $30.000</option>
-            <option>Combo 3 Corte+Barba+Facial - $30.000</option>
-            <option>Combo 4 Corte+Barba+Peinado+Facial - $40.000</option>
-            <option>Alineacón de cejas con cuchilla - $5.000</option>
-        </select>
+        <div class="cont-select">
+            <select id="servicio" name="listaservicios">
+                <option disabled selected>Seleccionar...</option>
+                <option>Corte de Cabello - $12.000</option>
+                <option>Afeitado de la Barba - $12.000</option>
+                <option>Peinado para caballero - $12.000</option>
+                <option>Servicio Facial - $12.000</option>
+                <option>Combo 1 Corte+Barba - $20.000</option>
+                <option>Combo 2 Corte+Barba+Peinado - $30.000</option>
+                <option>Combo 3 Corte+Barba+Facial - $30.000</option>
+                <option>Combo 4 Corte+Barba+Peinado+Facial - $40.000</option>
+                <option>Alineacón de cejas con cuchilla - $5.000</option>
+            </select>
+            <label for="servicio"><i class="fas fa-chevron-down"></i></label>
+        </div>
         <div id="respuesta"></div>
 
         <div class="cont-btn">
-            <label for="enviar" class="btn"><span class="txt-btn">Enviar</span>
+            <label for="enviar" class="btn"><span class="txt-btn">Enviar <i class="fab fa-whatsapp"></i></span>
             </label>
         </div>
         <input id="enviar" type="submit" value="enviar">
     </form>
     <script src="js/form.js"></script>
+    <footer>
+        <p>Material usado para este ejemplo</p>
+        <div>
+            Imagen del Backgound <a href="https://pixabay.com/es/users/mynorbejarano-8066127/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3315725">Mynor Bejarano</a> en <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3315725">Pixabay</a>
+        </div>
+    </footer>
 </body>
 </html>

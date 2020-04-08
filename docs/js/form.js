@@ -133,7 +133,7 @@ function selecion(ipt){
     }else{
         ipt.classList.remove('select');
     };
-    console.log(ipt.value);
+    //console.log(ipt.value);
 };
 
 function reset(){
