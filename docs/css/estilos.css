@@ -33,6 +33,13 @@ header, footer{
 header{
     margin-bottom: 50px;
 }
+header .logo{
+    width: 100px;
+}
+header h1{
+    width: calc(100% - 100px);
+    font-size: 1.25em;
+}
 .wave-header{
     position: absolute;
     width: 100%;
@@ -228,15 +235,22 @@ footer{
     stroke: none; 
     fill: #EFB810;
 }
+footer div{
+    width: 100%;
+    text-align: center;
+}
 footer p{
     width: 100%;
+    max-width: 1000px;
+    margin-top: 1.25em;
     margin-bottom: 0.31em;
 }
-/* @media (min-width:600px){
-    body{
-        font-size: 16px;
+@media (min-width:600px){
+    header h1{
+        width: auto;
+        font-size: 1.875em;
     }
-} */
+}
 @keyframes open{
     100%{
         clip-path: circle(100% at 50% 50%);
