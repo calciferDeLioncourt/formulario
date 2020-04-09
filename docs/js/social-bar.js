@@ -10,6 +10,9 @@ let contenido = `<div class="social-bar-icon-facebook" title="Facebook">
                 <div class="social-bar-icon-messenger" title="Messenger">
                     <i class="fab fa-facebook-messenger"></i>
                 </div>
+                <div class="social-bar-icon-github" title="Github">
+                    <i class="fab fa-github"></i>
+                </div>
                 <div class="social-bar-icon-web" title="Web">
                     <i class="fas fa-globe"></i>
                 </div>`;
@@ -30,6 +33,9 @@ window.addEventListener('load', () => {
     });
     document.querySelector('.social-bar-icon-messenger').addEventListener('click', () => {
         window.open('https://m.me/jizradesign');
+    });
+    document.querySelector('.social-bar-icon-github').addEventListener('click', () => {
+        window.open('https://github.com/calciferDeLioncourt');
     });
     document.querySelector('.social-bar-icon-web').addEventListener('click', () => {
         window.open('https://jizratest.eu5.org');

@@ -29,6 +29,9 @@ background: #688ad3;
 .social-bar-icon-messenger{
     background: #6eb4f5;
 }
+.social-bar-icon-github{
+    background: rgb(76, 80, 85);
+}
 .social-bar-icon-web{
     background: rgb(223, 222, 222);
 }
@@ -44,10 +47,12 @@ background: #3b5998;
 .social-bar-icon-messenger:hover{
     background: #0084ff;
 }
+.social-bar-icon-github:hover{
+    background: #24292E;
+}
 .social-bar-icon-web:hover{
     background: gray;
 }
-
 footer{
     margin-bottom: 49px;
 }
