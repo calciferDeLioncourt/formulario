@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
         window.open('https://www.instagram.com/jizradesign');
     });
     document.querySelector('.social-bar-icon-whatsapp').addEventListener('click', () => {
-        window.open('https://api.whatsapp.com/send?phone=+5219662292&text=Hola');
+        window.open('https://api.whatsapp.com/send?phone=+525519662292&text=Hola');
     });
     document.querySelector('.social-bar-icon-messenger').addEventListener('click', () => {
         window.open('https://m.me/jizradesign');
