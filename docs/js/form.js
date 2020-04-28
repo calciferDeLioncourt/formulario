@@ -1,5 +1,5 @@
 const formWhats = document.querySelector('#form-whats');
-let tel = '+525519662292';
+let tel = '525519662292';
 let nombre = document.querySelector('#nombre');
 
 
@@ -32,6 +32,7 @@ hora.value = `${h}:${m}`;
 let barbero = document.querySelector('#barbero');
 let servicio = document.querySelector('#servicio');
 let resp = document.querySelector('#respuesta');
+let msj = document.querySelector('#mensaje');
 
 nombre.addEventListener('keyup', ()=>{
     selecion(nombre);
@@ -83,6 +84,9 @@ barbero.addEventListener('change', ()=>{
 servicio.addEventListener('change', ()=>{
     selecion(servicio);
 });
+msj.addEventListener('keyup', ()=>{
+    selecion(msj);
+});
 
 
 formWhats.addEventListener('change', ()=>{
@@ -96,14 +100,15 @@ formWhats.addEventListener('submit', e =>{
     e.preventDefault();
     reset();
     //var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-    let url = `https://api.whatsapp.com/send?phone=${tel}&text=
-                *_Barberia Lider_*%0A
-                *Reservas*%0A%0A
-                *¿Cual es tu nombre?*%0A${nombre.value}%0A
-                *Indica la fecha de tu reserva*%0A${fecha.value}%0A
-                *Indica la hora de tu reserva*%0A${hora.value}%0A
-                *Barbero de preferencia*%0A${barbero.value}%0A
-                *¿Cual es el servicio que se desea realizar?*%0A${servicio.value}`;
+    let apiWhatsap = `https://wa.me/${tel}?text=`;
+    let encabezados = `*_Barberia Lider_*%0A*Sistema de Reservas*%0A%0A`;
+    let nombreEsc = `*¿Cual es tu nombre?*%0A${nombre.value}%0A`;
+    let fechaEsc = `*Indica la fecha de tu reserva*%0A${fecha.value}%0A`;
+    let horaEsc = `*Indica la hora de tu reserva*%0A${hora.value}%0A`;
+    let barberoEsc = `*Barbero de preferencia*%0A${barbero.value}%0A`;
+    let servicioEsc = `*¿Cual es el servicio que se desea realizar?*%0A${servicio.value}%0A`;
+    let msjEsc = `*Mensaje :*%0A${msj.value}`;
+    let url = `${apiWhatsap+encabezados.replace(/\ /g, '%20')+nombreEsc.replace(/\ /g, '%20')+fechaEsc.replace(/\ /g, '%20')+horaEsc.replace(/\ /g, '%20')+barberoEsc.replace(/\ /g, '%20')+servicioEsc.replace(/\ /g, '%20')+msjEsc.replace(/\ /g, '%20')}`;
 
     if(nombre.value === "" || fecha.value === "" || hora.value === ""){
         resp.classList.add('fail');
@@ -117,12 +122,11 @@ formWhats.addEventListener('submit', e =>{
         console.log('Faltan dato o se experimenta un error');
         return false;
     };
-    
     resp.classList.remove('fail');
     resp.classList.add('send');
     resp.innerHTML= `Se ha enviado tu reserva, ${nombre.value}`;
     window.open(url);
-    //console.log(url +' Mensaje enviado');
+    // console.log(url +' Mensaje enviado');
 
 });
 
